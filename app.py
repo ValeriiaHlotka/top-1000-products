@@ -15,7 +15,7 @@ def index():
 def suggest():
     query = request.args.get("q", "").lower()
     suggestions = [p for p in PRODUCTS if query in p["name"].lower()]
-    return jsonify(suggestions[:10])  # Return top 10 matches
+    return jsonify(suggestions)
 
 if __name__ == "__main__":
     app.run(debug=True)
